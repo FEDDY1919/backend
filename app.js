@@ -3,8 +3,8 @@ const express = require('express')
 require('express-async-errors') // handles async errors so we dont have to constantly try-catch within out API requests
 const app = express()
 const cors = require('cors') //Cross-Origin Resource Sharing.
-const productsRouter = require('./controllers/products') //imports the routing logic
-const usersRouter = require('./controllers/users')
+const productsRouter = require('./routes/products') //imports the routing logic
+const usersRouter = require('./routes/users')
 const middleware = require('./utils/middleware')
 const logger = require('./utils/logger')
 
