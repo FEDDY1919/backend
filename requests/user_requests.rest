@@ -15,12 +15,12 @@ GET http://localhost:3001/api/users
 
 ###
 
-PUT http://localhost:3001/api/users/630ddd797e83c063b81286ac
+PUT http://localhost:3001/api/users/630dffe54627d7b52a26e7bd
 Content-Type: application/json
 
 {
-    "username":"new user",
-    "name": "Oregano2009",
+    //"username":"lolololol"
+    //"name": "Oregano2009",
     "password":"t8439g3454"
 }
 ###
