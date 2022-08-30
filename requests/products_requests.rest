@@ -1,0 +1,27 @@
+POST http://localhost:3001/api/products
+Content-Type: application/json
+
+{
+    "name":"1st Product",
+    "price": 800.89,
+    "userId":"630dd6323cf171d4fcb717df"
+}
+
+###
+
+GET http://localhost:3001/api/products/630ddb19e061a80853dda071
+###
+
+
+
+###
+PUT http://localhost:3001/api/products/630ddb19e061a80853dda071
+Content-Type: application/json
+
+{
+    "name":"2nd Product",
+    "price": 120000
+}
+###
+DELETE http://localhost:3001/api/products/630ddb19e061a80853dda071
+
