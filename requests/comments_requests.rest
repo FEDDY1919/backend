@@ -1,0 +1,22 @@
+POST http://localhost:3001/api/comments
+Content-Type: application/json
+
+{
+    "username":"630dffe54627d7b52a26e7bd",
+    "content": "hjfgeoherhjrethoklrtehjklerthjklrteohjrtekhjert"
+}
+
+###
+
+PUT http://localhost:3001/api/comments/630e00294627d7b52a26e7c0
+Content-Type: application/json
+
+{
+
+    "content": "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+}
+
+###
+DELETE http://localhost:3001/api/comments/630e00294627d7b52a26e7c0
+
+
