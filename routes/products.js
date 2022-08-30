@@ -19,13 +19,13 @@ productsRouter.get('/:id', async (request, response) => {
 })
 
 productsRouter.post('/', async (request, response, next) => {
-  const body = request.body
+  const {name,price,userId} = request.body
 
-  const user = await User.findById(body.userId)
+  const user = await User.findById(userId)
 
   const product = new Product({
-    name: body.name,
-    price:body.price,
+    name,
+    price,
     date: new Date(),
     rating: 0,
     user: user._id
@@ -44,11 +44,11 @@ productsRouter.delete('/:id', async (request, response, next) => {
   })
 
 productsRouter.put('/:id', async(request, response, next) => {
-  const body = request.body
+  const {name,price} = request.body
 
   const product = {
-    name: body.name,
-    price: body.price
+    name,
+    price
   }
 
   Product.findByIdAndUpdate(request.params.id, product, { new: true })

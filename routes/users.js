@@ -45,22 +45,24 @@ usersRouter.delete('/:id', async (request, response, next) => {
 })
 
 usersRouter.put('/:id', async(request, response, next) => {
-  const body = request.body
-
-  const saltRounds = 10
-  const passwordHash = await bcrypt.hash(body.password, saltRounds)
-
-  const user = {
-    username:body.username,
-    name: body.name,
-    passwordHash:passwordHash
+  
+  const {name,password} = request.body
+  if(name)  {
+    User.findByIdAndUpdate(request.params.id, {name:name}, { new: true })
+    .then(updatedUser => {
+      return response.json(updatedUser)
+    }).catch(error => next(error))
   }
 
-  User.findByIdAndUpdate(request.params.id, user, { new: true })
-    .then(updatedProduct => {
-      response.json(updatedProduct)
-    })
-    .catch(error => next(error))
+  else{
+  const saltRounds = 10
+  const passwordHash = await bcrypt.hash(password, saltRounds)
+   User.findByIdAndUpdate(request.params.id, {passwordHash:passwordHash}, { new: true })
+    .then(updatedUser => {
+      return response.json(updatedUser)
+    }).catch(error => next(error))
+  }
+ 
 })
 
 

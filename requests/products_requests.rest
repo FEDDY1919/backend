@@ -2,9 +2,9 @@ POST http://localhost:3001/api/products
 Content-Type: application/json
 
 {
-    "name":"1st Product",
-    "price": 800.89,
-    "userId":"630dd6323cf171d4fcb717df"
+    "name":"3rd Product",
+    "price": 666.89,
+    "userId":"630dffe54627d7b52a26e7bd"
 }
 
 ###
@@ -15,7 +15,7 @@ GET http://localhost:3001/api/products/630ddb19e061a80853dda071
 
 
 ###
-PUT http://localhost:3001/api/products/630ddb19e061a80853dda071
+PUT http://localhost:3001/api/products/630e0fae91be6f146bdc0880
 Content-Type: application/json
 
 {
