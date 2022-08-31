@@ -1,8 +1,12 @@
 const commentsRouter = require('express').Router()
 const Comment = require('../models/comment')
+const Product =  require('../models/product')
+const User = require('../models/user')
 
 commentsRouter.get('/', async(request,response) =>{
-    const comments = await Comment.find({}).populate('username',{username:1})
+    const comments = await Comment.find({})
+    .populate('user',{username:1})
+    .populate('product',{name:1})
     response.json(comments)
 })
 
@@ -14,11 +18,16 @@ commentsRouter.get('/:id', async(request,response) =>{
 })
 
 commentsRouter.post('/', async(request,response)=>{
-    const {username,content} = request.body
+    const {userId,content,productId} = request.body
+    
+    const product = await Product.findById(productId)
+    const user = await User.findById(userId)
 
     const comment = new Comment({
-        username,
-        content
+        user:user._id,
+        content,
+        product:product._id,
+        date: new Date()
     })
 
     const savedComment = await comment.save()
