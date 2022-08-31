@@ -2,8 +2,9 @@ POST http://localhost:3001/api/comments
 Content-Type: application/json
 
 {
-    "username":"630dffe54627d7b52a26e7bd",
-    "content": "hjfgeoherhjrethoklrtehjklerthjklrteohjrtekhjert"
+    "userId":"630dffe54627d7b52a26e7bd",
+    "content": "forsenforsenforsenforsenforsenforsenforsenforsenforsen",
+    "productId":"630e0fae91be6f146bdc0880"
 }
 
 ###
@@ -17,6 +18,6 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3001/api/comments/630e00294627d7b52a26e7c0
+DELETE http://localhost:3001/api/comments/630f13d8528e11f8dc93e080
 
 
